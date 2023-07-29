@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  background-color: #333;
+  padding: 10px;
+}
+
+.hamburger-menu {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 5px;
+  margin-right: 10px;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 4px 0;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.menu {
+  list-style: none;
+  display: inline-flex;
+  transform: translateX(100%); /* Start with the menu off-screen to the right */
+  transition: transform 0.3s ease-out;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #333;
+  padding: 10px;
+}
+
+.menu.show-menu {
+  transform: translateX(0); /* Slide the menu in from the right */
+}
+
+.menu li {
+  padding: 10px;
+}
+
+.menu a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.show-menu {
+  display: inline-flex;
+}
+
+/* New styles for the animation */
+.hamburger-menu.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(-45deg);
+}
+
+.hamburger-menu.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-menu.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(45deg);
+}
